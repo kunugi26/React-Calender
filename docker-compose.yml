@@ -1,6 +1,13 @@
 version: "3"
 
 services:
+  node:
+    image: node:12.10.0
+    volumes:
+      - ".:/var"
+    networks:
+      - private-subnet
+    tty: true
   nginx:
     build: ./nginx/
     ports:
